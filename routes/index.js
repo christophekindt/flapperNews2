@@ -57,9 +57,7 @@ router.post('/posts', function(req, res, next) {
 	});
 });
 
-/* GET post
-   Obtenemos un post (Se ejecuta automáticamente la query definida en router.param)
- */
+/* GET post */
 router.get('/posts/:post', function (req, res) {
 	req.post.populate('comments', function(err, post) {
 		res.json(post);
