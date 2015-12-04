@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 // require models
-require('./models');
-//require('./models/Posts');
-//require('./models/Comments');
+//require('./models');
+require('./models/Posts');
+require('./models/Comments');
 
 
 // init database

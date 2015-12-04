@@ -28,13 +28,13 @@ router.param('comment', function (req, res, next, id) {
 			return ('Could not find comment');
 		}
 
-		req.comment = comment;
+		req.post = comment;
 		return next();
 	});
 });
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Flapper News' });
 });
 
@@ -58,8 +58,9 @@ router.post('/posts', function(req, res, next) {
 });
 
 /* GET post */
-router.get('/posts/:post', function (req, res) {
+router.get('/posts/:post', function (req, res, next) {
 	req.post.populate('comments', function(err, post) {
+		if (err) {return next(err);}
 		res.json(post);
 	});
 });
