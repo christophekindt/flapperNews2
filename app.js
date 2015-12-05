@@ -6,11 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect('mongodb://chrizzy9-webapps-2241673:27017/news');
 var passport = require('passport');
 require('./models/Posts');
 require('./models/Comments');
-require('./models/User.js')
+require('./models/User.js');
 require('./config/passport');
 
 var routes = require('./routes/index');
@@ -53,5 +53,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+app.listen(8080);
 module.exports = app;
