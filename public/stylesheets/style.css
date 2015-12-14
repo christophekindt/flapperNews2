@@ -1,8 +1,18 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+pre {
+    display: block;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    white-space: pre;
+    margin: 1em 0;
+}
+.newline {
+  white-space: pre-wrap;
+  font-size:20px;
 }
